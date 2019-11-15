@@ -1,0 +1,35 @@
+version: '3'
+
+networks: 
+  front_network:
+    driver: bridge
+
+services: 
+  umbrella:
+    image: nginx:1.17.5-alpine
+    ports: 
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on: 
+      - html-app
+      - react-app
+    networks: 
+     - front_network
+  
+  html-app:
+    image: m4rcu5/lighttpd
+    volumes: 
+      - ./home/:/var/www/localhost/htdocs/
+    networks: 
+     - front_network
+  
+  react-app:
+    build: ./react-app/
+    networks: 
+     - front_network
+  
+  angular-app:
+    build: ./angular-app/
+    networks: 
+     - front_network
