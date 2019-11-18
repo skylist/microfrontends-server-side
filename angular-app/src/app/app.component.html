@@ -216,9 +216,7 @@
     transform: translateY(-0.25rem);
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   }
-
-  footer {
-    margin-top: 8px;
+  import './assets/header.js'
     display: flex;
     align-items: center;
     line-height: 20px;
@@ -237,9 +235,7 @@
     padding: 3px 10px;
     border: 1px solid rgba(27,31,35,.2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
+    background-image: linear-gradient(-180deg,#import './assets/header.js'
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   }
 
@@ -295,6 +291,12 @@
   }
 </style>
 
+<app-header>
+    <a href="/">html</a>
+    <a href="/react">react</a>
+    <a href="/angular">angular</a>
+  </app-header>
+
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
@@ -327,6 +329,8 @@
 </div>
 
 <div class="content" role="main">
+
+
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
